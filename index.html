@@ -245,6 +245,29 @@
       pointer-events: none;
     }
 
+    .collection-group {
+      margin-top: 30px;
+    }
+
+    .collection-group:first-of-type {
+      margin-top: 0;
+    }
+
+    .collection-group-title {
+      margin: 0 0 12px;
+      font-size: 0.86rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .collection-group-note {
+      margin: -4px 0 14px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
     .about {
       padding: 26px;
       border: 1px solid var(--line);
@@ -378,64 +401,122 @@
     <section class="section" aria-labelledby="collection-title">
       <div class="section-head">
         <div>
-          <h2 id="collection-title">Collection</h2>
-          <p class="section-note">2022年11月8日から続く、ねもたちの記録。</p>
+          <h2 id="collection-title">OpenSea Collections</h2>
+          <p class="section-note">2022年11月8日から続く、NFT作品と活動の記録。</p>
         </div>
       </div>
 
-      <div class="grid">
-        <a class="card" href="https://opensea.io/collection/nemo-collection-00" target="_blank" rel="noopener">
-          <div class="icon">🗃️</div>
-          <div class="card-body">
-            <div class="card-title">Nemo First</div>
-            <p>2022年11月8日、活動のいちばん最初に生まれたCollection。まだ何も決まっていなかった頃の、自由でやりたい放題な過去絵たち。</p>
-            <span class="badge">First Collection · OpenSea ↗</span>
-          </div>
-        </a>
+      <div class="collection-group">
+        <h3 class="collection-group-title">Nemo Collections</h3>
+        <p class="collection-group-note">ねも・ちびねもを中心にした本流のCollection。</p>
+        <div class="grid">
+          <a class="card" href="https://opensea.io/collection/nemo-collection-00" target="_blank" rel="noopener">
+            <div class="icon">🗃️</div>
+            <div class="card-body">
+              <div class="card-title">Nemo First</div>
+              <p>2022年11月8日、活動のいちばん最初に生まれたCollection。まだ何も決まっていなかった頃の、自由でやりたい放題な過去絵たち。</p>
+              <span class="badge">First Collection · OpenSea ↗</span>
+            </div>
+          </a>
 
-        <a class="card" href="https://opensea.io/collection/nemocollection2023" target="_blank" rel="noopener">
-          <div class="icon">🐱</div>
-          <div class="card-body">
-            <div class="card-title">NemoCollection2023</div>
-            <p>ねもコレのメインCollection。179体のねもちゃんが暮らしていて、現在は「ねもの村」の世界にもつながっています。</p>
-            <span class="badge">Main Collection · 179 Nemo · OpenSea ↗</span>
-          </div>
-        </a>
+          <a class="card" href="https://opensea.io/collection/nemocollection2023" target="_blank" rel="noopener">
+            <div class="icon">🐱</div>
+            <div class="card-body">
+              <div class="card-title">NemoCollection2023</div>
+              <p>ねもコレのメインCollection。179体のねもちゃんがいて、現在は「ねもの村」の世界にもつながっています。</p>
+              <span class="badge">Main Collection · 179 Nemo · OpenSea ↗</span>
+            </div>
+          </a>
 
-        <a class="card" href="https://opensea.io/collection/chibi-nemo-house" target="_blank" rel="noopener">
-          <div class="icon">🧸</div>
-          <div class="card-body">
-            <div class="card-title">Chibi Nemo House</div>
-            <p>ねもちゃんそっくりな妹「ちびねも」のCollection。小さな妹たち、全10体。</p>
-            <span class="badge">Chibi Nemo · 10 works · OpenSea ↗</span>
-          </div>
-        </a>
+          <a class="card" href="https://opensea.io/collection/chibi-nemo-house" target="_blank" rel="noopener">
+            <div class="icon">🧸</div>
+            <div class="card-body">
+              <div class="card-title">Chibi Nemo House</div>
+              <p>ねもちゃんそっくりな妹「ちびねも」のCollection。小さな妹たち、全10体。</p>
+              <span class="badge">Chibi Nemo · 10 works · OpenSea ↗</span>
+            </div>
+          </a>
 
-        <a class="card" href="https://opensea.io/collection/kawaii-nemo" target="_blank" rel="noopener">
-          <div class="icon">🎀</div>
-          <div class="card-body">
-            <div class="card-title">Kawaii Nemo</div>
-            <p>OpenSeaのアップデート後、新しい作り方で制作した最新Collection。現在のところ追加予定はありません。</p>
-            <span class="badge">Latest Collection · OpenSea ↗</span>
-          </div>
-        </a>
+          <a class="card" href="https://opensea.io/collection/kawaii-nemo" target="_blank" rel="noopener">
+            <div class="icon">🎀</div>
+            <div class="card-body">
+              <div class="card-title">Kawaii Nemo</div>
+              <p>OpenSeaのアップデート後、新しい作り方で制作した最新Collection。現在のところ追加予定はありません。</p>
+              <span class="badge">Latest Collection · OpenSea ↗</span>
+            </div>
+          </a>
 
-        <a class="card" href="https://opensea.io/collection/nemo-cafe" target="_blank" rel="noopener">
-          <div class="icon">☕</div>
-          <div class="card-body">
-            <div class="card-title">Nemo Cafe</div>
-            <p>Discordの「ねもカフェ」からノリで生まれたCollection。料理好きの仲間とのやり取りからできた、ちょっと寄り道な作品群。</p>
-            <span class="badge">Nemo Cafe · OpenSea ↗</span>
-          </div>
-        </a>
+          <a class="card" href="https://opensea.io/collection/nemo-cafe" target="_blank" rel="noopener">
+            <div class="icon">☕</div>
+            <div class="card-body">
+              <div class="card-title">Nemo Cafe</div>
+              <p>Discordの「ねもカフェ」から生まれたCollection。料理好きの仲間とのノリからできた、ちょっと寄り道な作品群。</p>
+              <span class="badge">Nemo Cafe · OpenSea ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
 
-        <div class="card" role="group" aria-label="Secret Garden">
-          <div class="icon">🌙</div>
-          <div class="card-body">
-            <div class="card-title">Secret Garden</div>
-            <p>Nemo Holderだけが入れる場所。入口は現在のNemo Gardenの中に残します。</p>
-            <span class="badge">Holder Only</span>
-          </div>
+      <div class="collection-group">
+        <h3 class="collection-group-title">Nemo Special</h3>
+        <p class="collection-group-note">配布や贈り物のために生まれた、特別なねもたち。</p>
+        <div class="grid">
+          <a class="card" href="https://opensea.io/collection/nemocore-special" target="_blank" rel="noopener">
+            <div class="icon">🎁</div>
+            <div class="card-body">
+              <div class="card-title">Nemocore Special</div>
+              <p>エアドロップ用に制作した、ねもコレのSpecial Collection。</p>
+              <span class="badge">Airdrop · OpenSea ↗</span>
+            </div>
+          </a>
+
+          <a class="card" href="https://opensea.io/collection/special-thx" target="_blank" rel="noopener">
+            <div class="icon">💐</div>
+            <div class="card-body">
+              <div class="card-title">Special Thanks</div>
+              <p>誰かに贈るために制作した、感謝を込めたNemo Collection。プレゼントやお礼のための特別な作品たち。</p>
+              <span class="badge">Gift · Thanks · OpenSea ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="collection-group">
+        <h3 class="collection-group-title">Archive / Other Works</h3>
+        <p class="collection-group-note">「麟月みすず」名義で活動していた頃の作品など。</p>
+        <div class="grid">
+          <a class="card" href="https://opensea.io/collection/yorozuya-nm" target="_blank" rel="noopener">
+            <div class="icon">🎨</div>
+            <div class="card-body">
+              <div class="card-title">Yorozuya NM</div>
+              <p>Discord企画で制作していた、お絵描きCollection。「麟月みすず」名義で活動していた頃の作品たち。</p>
+              <span class="badge">Archive · OpenSea ↗</span>
+            </div>
+          </a>
+
+          <a class="card" href="https://opensea.io/collection/misz" target="_blank" rel="noopener">
+            <div class="icon">🫧</div>
+            <div class="card-body">
+              <div class="card-title">MISZ</div>
+              <p>「麟月みすず」名義で、頭の中にあるイメージをNFTとして形にしたCollection。</p>
+              <span class="badge">Archive · OpenSea ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="collection-group">
+        <h3 class="collection-group-title">Friends</h3>
+        <p class="collection-group-note">一緒に活動している仲間のCollection。</p>
+        <div class="grid">
+          <a class="card" href="https://opensea.io/collection/kawaii-girls-t" target="_blank" rel="noopener">
+            <div class="icon">🌷</div>
+            <div class="card-body">
+              <div class="card-title">Kawaii Girls T</div>
+              <p>一緒に活動している仲間・とくもりさんの、かわいい女の子Collection。</p>
+              <span class="badge">Friend Collection · OpenSea ↗</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
