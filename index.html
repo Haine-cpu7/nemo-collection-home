@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4efe5" />
+  <title>Nemo collection | 小さな世界の入口</title>
+  <meta name="description" content="Nemo collectionの作品、ゲーム、物語、Nemo Gardenへつながる小さな入口。" />
+  <style>
+    :root {
+      --paper: #fbf8f1;
+      --paper-2: #f3eee2;
+      --ink: #403a34;
+      --muted: #7e756b;
+      --line: rgba(64, 58, 52, 0.12);
+      --card: rgba(255, 255, 255, 0.78);
+      --accent: #6d8663;
+      --accent-soft: #e5ecdf;
+      --shadow: 0 16px 42px rgba(63, 55, 47, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(211, 226, 200, 0.55), transparent 28%),
+        radial-gradient(circle at 82% 22%, rgba(239, 217, 202, 0.50), transparent 26%),
+        linear-gradient(180deg, var(--paper), var(--paper-2));
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 54px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 2px 24px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .tiny-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .tiny-link:hover { border-color: var(--muted); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(38px, 7vw, 78px) clamp(22px, 6vw, 72px);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.63);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      left: -95px;
+      bottom: -115px;
+      background: rgba(153, 183, 139, 0.22);
+    }
+
+    .hero::after {
+      right: -80px;
+      top: -120px;
+      background: rgba(231, 197, 181, 0.25);
+    }
+
+    .hero-mark {
+      font-size: 2.7rem;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-weight: 500;
+      font-size: clamp(2.25rem, 7vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .tagline {
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: clamp(0.96rem, 2.5vw, 1.12rem);
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: var(--ink);
+      font-size: 0.96rem;
+    }
+
+    .garden-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: min(100%, 300px);
+      margin-top: 28px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 10px 25px rgba(64, 58, 52, 0.18);
+      transition: transform 160ms ease, opacity 160ms ease;
+    }
+
+    .garden-button:hover { transform: translateY(-2px); }
+
+    .section {
+      padding-top: 48px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-weight: 500;
+      font-size: clamp(1.45rem, 4vw, 2rem);
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      display: flex;
+      gap: 16px;
+      min-height: 150px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(63, 55, 47, 0.05);
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(63, 55, 47, 0.09);
+      border-color: rgba(109, 134, 99, 0.35);
+    }
+
+    .icon {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--accent-soft);
+      font-size: 1.45rem;
+    }
+
+    .card-body { min-width: 0; }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 1px 0 5px;
+      font-weight: 800;
+      font-size: 1.04rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.7;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 3px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      background: rgba(255,255,255,0.6);
+    }
+
+    .disabled {
+      opacity: 0.48;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .about {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.48);
+    }
+
+    .about p { margin: 0; }
+    .about p + p { margin-top: 10px; }
+
+    footer {
+      padding: 38px 4px 8px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 720px) {
+      .shell { width: min(100% - 20px, 1080px); padding-top: 16px; }
+      .topbar { padding: 5px 3px 14px; }
+      .hero { border-radius: 28px; }
+      .grid { grid-template-columns: 1fr; }
+      .section { padding-top: 34px; }
+      .section-head { align-items: start; flex-direction: column; gap: 4px; }
+      .card { min-height: 0; padding: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">NEMO COLLECTION</div>
+      <a class="tiny-link" href="https://lit.link/Nemocollection" target="_blank" rel="noopener">Links ↗</a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-mark">🐱🌿</div>
+      <h1>Nemo collection</h1>
+      <p class="tagline">小さな世界の入口。</p>
+      <p class="intro">
+        NFTから始まって、物語、ゲーム、庭、村へ。<br>
+        ここは、ねもコレで生まれたものを静かにつないでおく場所です。
+      </p>
+
+      <!-- ★★★ PC編集ポイント①：Nemo Gardenの公開URLを href="..." に入れる ★★★ -->
+      <a class="garden-button" href="#garden-url" aria-label="Nemo Gardenへ">
+        🌿 Nemo Gardenへ
+      </a>
+    </section>
+
+    <section class="section" aria-labelledby="world-title">
+      <div class="section-head">
+        <div>
+          <h2 id="world-title">World</h2>
+          <p class="section-note">ねもたちが暮らす場所。</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- ★★★ PC編集ポイント②：href="#" を実際のURLに差し替える ★★★ -->
+        <a class="card disabled" href="#" aria-disabled="true">
+          <div class="icon">🌱</div>
+          <div class="card-body">
+            <div class="card-title">ねもの村</div>
+            <p>ねもたちが暮らす、小さな村。遊びながら世界が少しずつ育っていきます。</p>
+            <span class="badge">URLを設定してください</span>
+          </div>
+        </a>
+
+        <!-- ★★★ PC編集ポイント③：Nemo Garden URLを設定したら disabled を外す ★★★ -->
+        <a class="card disabled" href="#" aria-disabled="true">
+          <div class="icon">🌿</div>
+          <div class="card-body">
+            <div class="card-title">Nemo Garden</div>
+            <p>市場、星待館、釣り場、庭園、売店、そして秘密の庭。いま動いているねもの世界。</p>
+            <span class="badge">既存Gardenは変更しません</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="story-title">
+      <div class="section-head">
+        <div>
+          <h2 id="story-title">Stories & Games</h2>
+          <p class="section-note">読む、遊ぶ、推理する。</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="https://note.com/nemocollection" target="_blank" rel="noopener">
+          <div class="icon">📖</div>
+          <div class="card-body">
+            <div class="card-title">ねもちゃんの日記</div>
+            <p>星待館の旅やミステリーなど、ねもちゃんの物語を読む場所。</p>
+            <span class="badge">note ↗</span>
+          </div>
+        </a>
+
+        <!-- ★★★ PC編集ポイント④：ゲーム一覧または代表ゲームのURLを設定 ★★★ -->
+        <a class="card disabled" href="#" aria-disabled="true">
+          <div class="icon">🎮</div>
+          <div class="card-body">
+            <div class="card-title">Games</div>
+            <p>これまで作ってきたWEBゲームや、小さな実験作品たち。</p>
+            <span class="badge">URLを設定してください</span>
+          </div>
+        </a>
+
+        <!-- ★★★ PC編集ポイント⑤：ツール置き場のURLを設定 ★★★ -->
+        <a class="card disabled" href="#" aria-disabled="true">
+          <div class="icon">🧰</div>
+          <div class="card-body">
+            <div class="card-title">Tools</div>
+            <p>伏線チェッカーなど、創作から生まれた小さな道具置き場。</p>
+            <span class="badge">URLを設定してください</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://lit.link/Nemocollection" target="_blank" rel="noopener">
+          <div class="icon">🗺️</div>
+          <div class="card-body">
+            <div class="card-title">All Links</div>
+            <p>SNSや外部ページをまとめて確認したいときはこちら。</p>
+            <span class="badge">lit.link ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="collection-title">
+      <div class="section-head">
+        <div>
+          <h2 id="collection-title">Collection</h2>
+          <p class="section-note">すべての始まり。</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="https://opensea.io/collection/nemocollection2023" target="_blank" rel="noopener">
+          <div class="icon">🎨</div>
+          <div class="card-body">
+            <div class="card-title">NemoCollection2023</div>
+            <p>2023年から始まった、ねもちゃんのNFT Collection。</p>
+            <span class="badge">OpenSea ↗</span>
+          </div>
+        </a>
+
+        <div class="card" role="group" aria-label="Secret Garden">
+          <div class="icon">🌙</div>
+          <div class="card-body">
+            <div class="card-title">Secret Garden</div>
+            <p>Nemo Holderだけが入れる場所。入口は現在のNemo Gardenの中に残します。</p>
+            <span class="badge">Holder Only</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="about-title">
+      <div class="about">
+        <h2 id="about-title">About Nemo collection</h2>
+        <p>
+          Nemo collectionは2023年に始まりました。NFTから生まれた一匹のねもが、
+          物語になり、ゲームになり、少しずつ世界を広げています。
+        </p>
+        <p>
+          完成を急がず、作りたいものを作る。その足跡を、この場所に残していきます。
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Nemo collection · since 2023<br>
+      小さな世界は、ゆっくり育ちます。
+    </footer>
+  </main>
+</body>
+</html>
