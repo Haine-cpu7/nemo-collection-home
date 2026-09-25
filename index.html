@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nemo collection" />
   <meta property="og:title" content="Nemo collection（ねもコレ）｜NFT・ゲーム・音楽・物語の公式ポータル" />
-  <meta property="og:description" content="Nemo collection（ねもコレ）の公式ポータル。179体のねもちゃんが暮らすNFTゲーム「ねもの村」、Nemo Mystery、OpenSea NFTコレクション、note、Apple Music、YouTubeなど、ねもちゃんの作品と活動をまとめて紹介します。" />
+  <meta property="og:description" content="Nemo collection（ねもコレ）の公式ポータル。ねもちゃんを中心に、イラスト、NFT、物語、WEBゲーム、音楽など、これまで生まれた作品と活動をまとめています。「ねもの村」「Nemo Mystery」、OpenSea、note、Apple Music、YouTubeなどを案内します。" />
   <meta property="og:url" content="https://haine-cpu7.github.io/nemo-collection-home/" />
   <meta property="og:image" content="https://haine-cpu7.github.io/nemo-collection-home/assets/og-nemo-collection.png" />
   <meta property="og:image:secure_url" content="https://haine-cpu7.github.io/nemo-collection-home/assets/og-nemo-collection.png" />
@@ -25,7 +25,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nemo collection（ねもコレ）｜NFT・ゲーム・音楽・物語の公式ポータル" />
-  <meta name="twitter:description" content="Nemo collection（ねもコレ）の公式ポータル。179体のねもちゃんが暮らすNFTゲーム「ねもの村」、Nemo Mystery、OpenSea NFTコレクション、note、Apple Music、YouTubeなど、ねもちゃんの作品と活動をまとめて紹介します。" />
+  <meta name="twitter:description" content="Nemo collection（ねもコレ）の公式ポータル。ねもちゃんを中心に、イラスト、NFT、物語、WEBゲーム、音楽など、これまで生まれた作品と活動をまとめています。「ねもの村」「Nemo Mystery」、OpenSea、note、Apple Music、YouTubeなどを案内します。" />
   <meta name="twitter:image" content="https://haine-cpu7.github.io/nemo-collection-home/assets/og-nemo-collection.png" />
   <meta name="twitter:image:alt" content="Nemo collection - 小さくて、かわいい世界の入口" />
 
@@ -34,7 +34,7 @@
   <link rel="manifest" href="site.webmanifest" />
 
   <title>Nemo collection（ねもコレ）｜NFT・ゲーム・音楽・物語の公式ポータル</title>
-  <meta name="description" content="Nemo collection（ねもコレ）の公式ポータル。179体のねもちゃんが暮らすNFTゲーム「ねもの村」、Nemo Mystery、OpenSea NFTコレクション、note、Apple Music、YouTubeなど、ねもちゃんの作品と活動をまとめて紹介します。" />
+  <meta name="description" content="Nemo collection（ねもコレ）の公式ポータル。ねもちゃんを中心に、イラスト、NFT、物語、WEBゲーム、音楽など、これまで生まれた作品と活動をまとめています。「ねもの村」「Nemo Mystery」、OpenSea、note、Apple Music、YouTubeなどを案内します。" />
   <style>
     :root {
       --paper: #fff8fb;
@@ -350,17 +350,10 @@
       border-color: rgba(242, 168, 191, 0.45);
     }
 
-    .media-card-feature {
-      grid-column: span 2;
-    }
-
     .media-thumb {
       position: relative;
-      min-height: 208px;
+      min-height: 220px;
       padding: 18px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
       overflow: hidden;
     }
 
@@ -368,25 +361,24 @@
     .media-thumb::after {
       content: "";
       position: absolute;
-      border-radius: 28px;
+      border-radius: 32px;
       pointer-events: none;
     }
 
     .media-thumb::before {
-      width: 120px;
-      height: 120px;
-      right: 16px;
-      top: 16px;
-      background: rgba(255,255,255,0.34);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+      width: 132px;
+      height: 132px;
+      right: 18px;
+      top: 18px;
+      background: rgba(255,255,255,0.24);
     }
 
     .media-thumb::after {
-      width: 84px;
-      height: 84px;
-      right: 38px;
-      top: 34px;
-      background: rgba(255,255,255,0.18);
+      width: 94px;
+      height: 94px;
+      left: 20px;
+      bottom: 18px;
+      background: rgba(255,255,255,0.14);
     }
 
     .media-thumb.music {
@@ -401,97 +393,19 @@
       background: linear-gradient(135deg, #f7bfd0 0%, #d9c8ff 50%, #c1efe4 100%);
     }
 
-    .media-thumb.feature {
-      min-height: 250px;
-      align-items: center;
-      justify-content: center;
-      padding: 22px 24px;
-    }
-
-    .media-art {
+    .media-photo {
       position: relative;
-      width: 112px;
-      height: 112px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.28);
-      border: 1px solid rgba(255,255,255,0.42);
-      box-shadow: 0 12px 24px rgba(79, 57, 70, 0.14);
-      display: grid;
-      place-items: center;
-      font-size: 2.4rem;
-      backdrop-filter: blur(4px);
       z-index: 1;
-      overflow: hidden;
-    }
-
-    .media-art.media-art-tall {
-      width: 136px;
-      height: 136px;
-      border-radius: 28px;
-    }
-
-    .media-art img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .media-stack {
-      position: relative;
-      width: min(100%, 360px);
-      height: 190px;
-    }
-
-    .stack-card {
-      position: absolute;
-      width: 138px;
-      height: 138px;
-      border-radius: 28px;
+      height: 184px;
+      border-radius: 24px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.58);
-      box-shadow: 0 18px 30px rgba(91, 70, 80, 0.14);
-      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.68);
+      box-shadow: 0 14px 28px rgba(79, 57, 70, 0.12);
+      background: rgba(255,255,255,0.38);
     }
 
-    .stack-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .stack-a { left: 8px; top: 28px; transform: rotate(-10deg); z-index: 1; }
-    .stack-b { left: 112px; top: 6px; transform: rotate(4deg); z-index: 3; width: 150px; height: 150px; }
-    .stack-c { left: 228px; top: 36px; transform: rotate(10deg); z-index: 2; }
-
-    .media-glow {
-      position: absolute;
-      inset: auto auto 20px 24px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.72);
-      color: #8f7180;
-      font-size: 0.74rem;
-      border: 1px solid rgba(255,255,255,0.5);
-      z-index: 4;
-    }
-
-    .hero-sticker {
-      position: absolute;
-      right: clamp(18px, 5vw, 42px);
-      bottom: clamp(18px, 4vw, 34px);
-      width: 74px;
-      height: 74px;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.56);
-      box-shadow: 0 12px 26px rgba(164, 118, 140, 0.12);
-      opacity: 0.88;
-      background: rgba(255,255,255,0.5);
-    }
-
-    .hero-sticker img {
+    .media-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -527,24 +441,16 @@
     }
 
     @media (max-width: 720px) {
+
       .shell { width: min(100% - 20px, 1080px); padding-top: 16px; }
       .topbar { padding: 5px 3px 14px; }
       .hero { border-radius: 30px; }
       .grid { grid-template-columns: 1fr; }
       .media-grid { grid-template-columns: 1fr; }
-      .media-card-feature { grid-column: span 1; }
-      .media-thumb.feature { min-height: 220px; }
-      .media-stack { width: 100%; height: 168px; }
-      .stack-card { width: 112px; height: 112px; border-radius: 24px; }
-      .stack-a { left: 2px; top: 34px; }
-      .stack-b { left: 84px; top: 8px; width: 124px; height: 124px; }
-      .stack-c { left: 182px; top: 40px; }
-      .media-art.media-art-tall { width: 120px; height: 120px; border-radius: 24px; }
       .section { padding-top: 36px; }
       .section-head { align-items: start; flex-direction: column; gap: 4px; }
       .card { min-height: 0; padding: 19px; }
       .collection-group { padding: 14px; }
-      .hero-sticker { width: 58px; height: 58px; border-radius: 18px; right: 14px; bottom: 14px; }
     }
   </style>
 
@@ -561,7 +467,7 @@
         "ねもコレ",
         "Nemo Collection"
       ],
-      "description": "Nemo collection（ねもコレ）の公式ポータル。179体のねもちゃんが暮らすNFTゲーム「ねもの村」、Nemo Mystery、OpenSea NFTコレクション、note、Apple Music、YouTubeなど、ねもちゃんの作品と活動をまとめて紹介します。",
+      "description": "Nemo collection（ねもコレ）の公式ポータル。ねもちゃんを中心に、イラスト、NFT、物語、WEBゲーム、音楽など、これまで生まれた作品と活動をまとめています。「ねもの村」「Nemo Mystery」、OpenSea、note、Apple Music、YouTubeなどを案内します。",
       "inLanguage": "ja",
       "sameAs": [
         "https://note.com/nemocollection",
@@ -582,7 +488,7 @@
       "@id": "https://haine-cpu7.github.io/nemo-collection-home/#webpage",
       "url": "https://haine-cpu7.github.io/nemo-collection-home/",
       "name": "Nemo collection（ねもコレ）｜NFT・ゲーム・音楽・物語の公式ポータル",
-      "description": "Nemo collection（ねもコレ）の公式ポータル。179体のねもちゃんが暮らすNFTゲーム「ねもの村」、Nemo Mystery、OpenSea NFTコレクション、note、Apple Music、YouTubeなど、ねもちゃんの作品と活動をまとめて紹介します。",
+      "description": "Nemo collection（ねもコレ）の公式ポータル。ねもちゃんを中心に、イラスト、NFT、物語、WEBゲーム、音楽など、これまで生まれた作品と活動をまとめています。「ねもの村」「Nemo Mystery」、OpenSea、note、Apple Music、YouTubeなどを案内します。",
       "isPartOf": {
         "@id": "https://haine-cpu7.github.io/nemo-collection-home/#website"
       },
@@ -602,15 +508,19 @@
         },
         {
           "@type": "Thing",
+          "name": "Illustration"
+        },
+        {
+          "@type": "Thing",
+          "name": "Story"
+        },
+        {
+          "@type": "Thing",
           "name": "NFT"
         },
         {
           "@type": "Thing",
           "name": "Web game"
-        },
-        {
-          "@type": "Thing",
-          "name": "Illustration"
         },
         {
           "@type": "Thing",
@@ -675,11 +585,9 @@
       <h1>Nemo collection</h1>
       <p class="tagline">小さくて、かわいい世界の入口。</p>
       <p class="intro">
-        Nemo collection（ねもコレ）は、ねもちゃんを中心に<br>
-        NFT・WEBゲーム・物語・イラスト・音楽をつないでいく創作プロジェクトです。<br>
-        ここは、その小さな世界をふんわり案内する公式ポータルです。
+        ねもちゃんを中心に、イラスト、NFT、物語、ゲーム、音楽へ。<br>
+        ここは、ねもコレで生まれた作品をふんわりつないでおく場所です。
       </p>
-      <div class="hero-sticker" aria-hidden="true"><img src="assets/cover-aozora.png" alt="" width="74" height="74" decoding="async"></div>
 </section>
 
     <section class="section" id="world" aria-labelledby="world-title">
@@ -753,54 +661,59 @@
 
 
     
+    
+    
     <section class="section" id="music-video" aria-labelledby="media-title">
       <div class="section-head">
         <div>
           <h2 id="media-title">Music / Video</h2>
-          <p class="section-note">ねもちゃんの音楽と動画を、ジャケットと一緒に楽しめるメディア棚。</p>
+          <p class="section-note">ねもちゃんの音楽と動画を楽しめるメディア棚。</p>
         </div>
       </div>
 
       <div class="media-grid">
-        <a class="media-card media-card-feature" href="https://music.apple.com/jp/artist/nemo-collection/1839452063" target="_blank" rel="noopener">
-          <div class="media-thumb music feature">
-            <div class="media-stack" aria-hidden="true">
-              <div class="stack-card stack-a"><img src="assets/cover-kimi.png" alt="" width="138" height="138" loading="lazy" decoding="async"></div>
-              <div class="stack-card stack-b"><img src="assets/cover-aozora.png" alt="" width="150" height="150" loading="lazy" decoding="async"></div>
-              <div class="stack-card stack-c"><img src="assets/cover-kataomoi.png" alt="" width="138" height="138" loading="lazy" decoding="async"></div>
+        <a class="media-card" href="https://music.apple.com/jp/artist/nemo-collection/1839452063" target="_blank" rel="noopener">
+          <div class="media-thumb music">
+            <div class="media-photo">
+              <img src="assets/media-applemusic.png" alt="Apple Music用のねもちゃん画像" width="600" height="600" loading="lazy" decoding="async">
             </div>
-            <div class="media-glow">3 singles</div>
           </div>
           <div class="media-body">
             <span class="media-kicker">MUSIC ↗</span>
             <h3 class="media-title">Apple Music</h3>
-            <p class="media-text">「青空に向かって」「君がいない」「片思い日記」など、ねもコレの音楽をまとめて楽しめる場所。</p>
+            <p class="media-text">ねもコレの音楽をまとめて楽しめる場所。</p>
           </div>
         </a>
 
         <a class="media-card" href="https://www.youtube.com/@tokumori1105" target="_blank" rel="noopener">
           <div class="media-thumb video">
-            <div class="media-art media-art-tall"><img src="assets/cover-kimi.png" alt="Nemo collectionのYouTube動画イメージ" width="136" height="136" loading="lazy" decoding="async"></div>
+            <div class="media-photo">
+              <img src="assets/media-youtube.png" alt="YouTube用のねもちゃん画像" width="600" height="600" loading="lazy" decoding="async">
+            </div>
           </div>
           <div class="media-body">
             <span class="media-kicker">VIDEO ↗</span>
             <h3 class="media-title">YouTube</h3>
-            <p class="media-text">ねもちゃんの動画をまとめて見られる場所。世界観をじっくり味わえます。</p>
+            <p class="media-text">ねもちゃんの動画をまとめて見られる場所。</p>
           </div>
         </a>
 
         <a class="media-card" href="https://www.tiktok.com/@tokumori1105" target="_blank" rel="noopener">
           <div class="media-thumb short">
-            <div class="media-art media-art-tall"><img src="assets/cover-kataomoi.png" alt="Nemo collectionのTikTok動画イメージ" width="136" height="136" loading="lazy" decoding="async"></div>
+            <div class="media-photo">
+              <img src="assets/media-tiktok.png" alt="TikTok用のねもちゃん画像" width="600" height="600" loading="lazy" decoding="async">
+            </div>
           </div>
           <div class="media-body">
             <span class="media-kicker">SHORT VIDEO ↗</span>
             <h3 class="media-title">TikTok</h3>
-            <p class="media-text">ねもちゃんのショート動画を見られる場所。軽やかにのぞけるミニコンテンツ。</p>
+            <p class="media-text">ねもちゃんのショート動画を楽しめる場所。</p>
           </div>
         </a>
       </div>
     </section>
+
+
 
 
     <section class="section" id="nft-collections" aria-labelledby="collection-title">
@@ -1035,19 +948,18 @@
       </div>
 </section>
 
+    
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="about">
         <h2 id="about-title">About Nemo collection</h2>
         <p>
-          Nemo collection（ねもコレ）は2022年11月8日に始まった創作プロジェクトです。
-          NFTから生まれた「ねもちゃん」が、イラスト、物語、WEBゲーム、音楽へと広がり、
-          179体のNemoCollection2023や「ねもの村」「Nemo Mystery」などの作品につながっています。
-        </p>
-        <p>
-          完成を急がず、作りたいものを作る。その足跡を、この場所に残していきます。
+          Nemo collectionは、ねもちゃんから広がった小さな創作世界です。
+          イラスト、NFT、物語、ゲーム、音楽。
+          これまで生まれた作品を、ここにまとめています。
         </p>
       </div>
     </section>
+
 
     <footer>
       Nemo collection · since 2022<br>
