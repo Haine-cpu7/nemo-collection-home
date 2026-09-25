@@ -327,7 +327,6 @@
       font-size: 0.79rem;
     }
 
-
     .media-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -349,6 +348,10 @@
       transform: translateY(-4px);
       box-shadow: 0 18px 36px rgba(164, 118, 140, 0.12);
       border-color: rgba(242, 168, 191, 0.45);
+    }
+
+    .media-card-feature {
+      grid-column: span 2;
     }
 
     .media-thumb {
@@ -386,6 +389,25 @@
       background: rgba(255,255,255,0.18);
     }
 
+    .media-thumb.music {
+      background: linear-gradient(135deg, #ffbfd1 0%, #f2acc6 45%, #f7d1b3 100%);
+    }
+
+    .media-thumb.video {
+      background: linear-gradient(135deg, #b9dbff 0%, #bce8e2 46%, #ffd0d9 100%);
+    }
+
+    .media-thumb.short {
+      background: linear-gradient(135deg, #f7bfd0 0%, #d9c8ff 50%, #c1efe4 100%);
+    }
+
+    .media-thumb.feature {
+      min-height: 250px;
+      align-items: center;
+      justify-content: center;
+      padding: 22px 24px;
+    }
+
     .media-art {
       position: relative;
       width: 112px;
@@ -402,11 +424,57 @@
       overflow: hidden;
     }
 
+    .media-art.media-art-tall {
+      width: 136px;
+      height: 136px;
+      border-radius: 28px;
+    }
+
     .media-art img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    .media-stack {
+      position: relative;
+      width: min(100%, 360px);
+      height: 190px;
+    }
+
+    .stack-card {
+      position: absolute;
+      width: 138px;
+      height: 138px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.58);
+      box-shadow: 0 18px 30px rgba(91, 70, 80, 0.14);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .stack-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stack-a { left: 8px; top: 28px; transform: rotate(-10deg); z-index: 1; }
+    .stack-b { left: 112px; top: 6px; transform: rotate(4deg); z-index: 3; width: 150px; height: 150px; }
+    .stack-c { left: 228px; top: 36px; transform: rotate(10deg); z-index: 2; }
+
+    .media-glow {
+      position: absolute;
+      inset: auto auto 20px 24px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      color: #8f7180;
+      font-size: 0.74rem;
+      border: 1px solid rgba(255,255,255,0.5);
+      z-index: 4;
     }
 
     .hero-sticker {
@@ -428,18 +496,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .media-thumb.music {
-      background: linear-gradient(135deg, #ffb7c9 0%, #f2a8bf 42%, #f2c6a8 100%);
-    }
-
-    .media-thumb.video {
-      background: linear-gradient(135deg, #a7d7ff 0%, #a7e2dc 46%, #ffd0d9 100%);
-    }
-
-    .media-thumb.short {
-      background: linear-gradient(135deg, #f7bfd0 0%, #d9c8ff 50%, #c1efe4 100%);
     }
 
     .media-body {
@@ -476,6 +532,14 @@
       .hero { border-radius: 30px; }
       .grid { grid-template-columns: 1fr; }
       .media-grid { grid-template-columns: 1fr; }
+      .media-card-feature { grid-column: span 1; }
+      .media-thumb.feature { min-height: 220px; }
+      .media-stack { width: 100%; height: 168px; }
+      .stack-card { width: 112px; height: 112px; border-radius: 24px; }
+      .stack-a { left: 2px; top: 34px; }
+      .stack-b { left: 84px; top: 8px; width: 124px; height: 124px; }
+      .stack-c { left: 182px; top: 40px; }
+      .media-art.media-art-tall { width: 120px; height: 120px; border-radius: 24px; }
       .section { padding-top: 36px; }
       .section-head { align-items: start; flex-direction: column; gap: 4px; }
       .card { min-height: 0; padding: 19px; }
@@ -615,7 +679,7 @@
         NFT・WEBゲーム・物語・イラスト・音楽をつないでいく創作プロジェクトです。<br>
         ここは、その小さな世界をふんわり案内する公式ポータルです。
       </p>
-      <div class="hero-sticker" aria-hidden="true"><img src="assets/video-cover.png" alt="" width="74" height="74" decoding="async"></div>
+      <div class="hero-sticker" aria-hidden="true"><img src="assets/cover-aozora.png" alt="" width="74" height="74" decoding="async"></div>
 </section>
 
     <section class="section" id="world" aria-labelledby="world-title">
@@ -688,6 +752,7 @@
     </section>
 
 
+    
     <section class="section" id="music-video" aria-labelledby="media-title">
       <div class="section-head">
         <div>
@@ -697,20 +762,25 @@
       </div>
 
       <div class="media-grid">
-        <a class="media-card" href="https://music.apple.com/jp/artist/nemo-collection/1839452063" target="_blank" rel="noopener">
-          <div class="media-thumb music">
-            <div class="media-art"><img src="assets/music-cover.png" alt="Nemo collectionのApple Musicアートワーク" width="112" height="112" loading="lazy" decoding="async"></div>
+        <a class="media-card media-card-feature" href="https://music.apple.com/jp/artist/nemo-collection/1839452063" target="_blank" rel="noopener">
+          <div class="media-thumb music feature">
+            <div class="media-stack" aria-hidden="true">
+              <div class="stack-card stack-a"><img src="assets/cover-kimi.png" alt="" width="138" height="138" loading="lazy" decoding="async"></div>
+              <div class="stack-card stack-b"><img src="assets/cover-aozora.png" alt="" width="150" height="150" loading="lazy" decoding="async"></div>
+              <div class="stack-card stack-c"><img src="assets/cover-kataomoi.png" alt="" width="138" height="138" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="media-glow">3 singles</div>
           </div>
           <div class="media-body">
             <span class="media-kicker">MUSIC ↗</span>
             <h3 class="media-title">Apple Music</h3>
-            <p class="media-text">ねもコレの音楽を聴ける場所。シングルや楽曲をまとめて楽しめます。</p>
+            <p class="media-text">「青空に向かって」「君がいない」「片思い日記」など、ねもコレの音楽をまとめて楽しめる場所。</p>
           </div>
         </a>
 
         <a class="media-card" href="https://www.youtube.com/@tokumori1105" target="_blank" rel="noopener">
           <div class="media-thumb video">
-            <div class="media-art"><img src="assets/video-cover.png" alt="Nemo collectionのYouTube動画イメージ" width="112" height="112" loading="lazy" decoding="async"></div>
+            <div class="media-art media-art-tall"><img src="assets/cover-kimi.png" alt="Nemo collectionのYouTube動画イメージ" width="136" height="136" loading="lazy" decoding="async"></div>
           </div>
           <div class="media-body">
             <span class="media-kicker">VIDEO ↗</span>
@@ -721,7 +791,7 @@
 
         <a class="media-card" href="https://www.tiktok.com/@tokumori1105" target="_blank" rel="noopener">
           <div class="media-thumb short">
-            <div class="media-art"><img src="assets/short-cover.png" alt="Nemo collectionのTikTok動画イメージ" width="112" height="112" loading="lazy" decoding="async"></div>
+            <div class="media-art media-art-tall"><img src="assets/cover-kataomoi.png" alt="Nemo collectionのTikTok動画イメージ" width="136" height="136" loading="lazy" decoding="async"></div>
           </div>
           <div class="media-body">
             <span class="media-kicker">SHORT VIDEO ↗</span>
@@ -731,6 +801,7 @@
         </a>
       </div>
     </section>
+
 
     <section class="section" id="nft-collections" aria-labelledby="collection-title">
       <div class="section-head">
