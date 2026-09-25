@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f4efe5" />
+  <meta name="theme-color" content="#fff1f6" />
   <title>Nemo collection | 小さな世界の入口</title>
   <meta name="description" content="Nemo collectionの作品、ゲーム、物語、Nemo Gardenへつながる小さな入口。" />
   <style>
     :root {
-      --paper: #fbf8f1;
-      --paper-2: #f3eee2;
-      --ink: #403a34;
-      --muted: #7e756b;
-      --line: rgba(64, 58, 52, 0.12);
-      --card: rgba(255, 255, 255, 0.78);
-      --accent: #6d8663;
-      --accent-soft: #e5ecdf;
-      --shadow: 0 16px 42px rgba(63, 55, 47, 0.08);
-      --radius: 26px;
+      --paper: #fff8fb;
+      --paper-2: #fff1f6;
+      --ink: #5a4a52;
+      --muted: #8f7c85;
+      --line: rgba(163, 120, 141, 0.18);
+      --card: rgba(255, 255, 255, 0.82);
+      --accent: #f2a8bf;
+      --accent-2: #b7dbc6;
+      --accent-3: #f8d7a7;
+      --accent-soft: #fff0f5;
+      --shadow: 0 16px 42px rgba(164, 118, 140, 0.12);
+      --radius: 28px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -29,10 +30,11 @@
       min-height: 100vh;
       color: var(--ink);
       background:
-        radial-gradient(circle at 15% 10%, rgba(211, 226, 200, 0.55), transparent 28%),
-        radial-gradient(circle at 82% 22%, rgba(239, 217, 202, 0.50), transparent 26%),
+        radial-gradient(circle at 8% 8%, rgba(255, 213, 227, 0.9), transparent 23%),
+        radial-gradient(circle at 92% 16%, rgba(213, 240, 223, 0.72), transparent 21%),
+        radial-gradient(circle at 78% 88%, rgba(255, 229, 187, 0.68), transparent 18%),
         linear-gradient(180deg, var(--paper), var(--paper-2));
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
       line-height: 1.75;
     }
 
@@ -41,7 +43,7 @@
     .shell {
       width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 54px;
+      padding: 26px 0 58px;
     }
 
     .topbar {
@@ -49,31 +51,43 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 8px 2px 24px;
+      padding: 8px 2px 22px;
     }
 
     .brand {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       letter-spacing: 0.08em;
-      font-weight: 700;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(164, 118, 140, 0.08);
     }
 
     .tiny-link {
       color: var(--muted);
       text-decoration: none;
       font-size: 0.88rem;
-      border-bottom: 1px solid transparent;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(163, 120, 141, 0.14);
+      transition: transform 160ms ease, background 160ms ease;
     }
 
-    .tiny-link:hover { border-color: var(--muted); }
+    .tiny-link:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.86);
+    }
 
     .hero {
       position: relative;
       overflow: hidden;
-      padding: clamp(38px, 7vw, 78px) clamp(22px, 6vw, 72px);
+      padding: clamp(38px, 7vw, 80px) clamp(22px, 6vw, 72px);
       border: 1px solid var(--line);
-      border-radius: 34px;
-      background: rgba(255, 255, 255, 0.63);
+      border-radius: 38px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.76), rgba(255,255,255,0.62));
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
       text-align: center;
@@ -83,50 +97,50 @@
     .hero::after {
       content: "";
       position: absolute;
-      width: 210px;
-      height: 210px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
-      filter: blur(2px);
       pointer-events: none;
+      filter: blur(2px);
     }
 
     .hero::before {
-      left: -95px;
-      bottom: -115px;
-      background: rgba(153, 183, 139, 0.22);
+      left: -88px;
+      bottom: -120px;
+      background: rgba(242, 168, 191, 0.28);
     }
 
     .hero::after {
-      right: -80px;
+      right: -86px;
       top: -120px;
-      background: rgba(231, 197, 181, 0.25);
+      background: rgba(183, 219, 198, 0.26);
     }
 
     .hero-mark {
-      font-size: 2.7rem;
-      margin-bottom: 6px;
+      font-size: 3rem;
+      margin-bottom: 8px;
     }
 
     h1 {
       margin: 0;
-      font-family: Georgia, "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
-      font-weight: 500;
-      font-size: clamp(2.25rem, 7vw, 4.8rem);
+      font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
       line-height: 1.05;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.03em;
     }
 
     .tagline {
-      margin: 18px auto 0;
+      margin: 16px auto 0;
       color: var(--muted);
-      font-size: clamp(0.96rem, 2.5vw, 1.12rem);
+      font-size: clamp(1rem, 2.5vw, 1.12rem);
     }
 
     .intro {
       max-width: 650px;
-      margin: 20px auto 0;
+      margin: 18px auto 0;
       color: var(--ink);
-      font-size: 0.96rem;
+      font-size: 0.98rem;
     }
 
     .garden-button {
@@ -134,23 +148,26 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-width: min(100%, 300px);
+      min-width: min(100%, 320px);
       margin-top: 28px;
-      padding: 15px 22px;
+      padding: 15px 24px;
       border-radius: 999px;
-      background: var(--ink);
+      background: linear-gradient(135deg, #f4a8c0, #efb6a4);
       color: white;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.02em;
-      box-shadow: 0 10px 25px rgba(64, 58, 52, 0.18);
-      transition: transform 160ms ease, opacity 160ms ease;
+      box-shadow: 0 12px 26px rgba(242, 168, 191, 0.28);
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .garden-button:hover { transform: translateY(-2px); }
+    .garden-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(242, 168, 191, 0.34);
+    }
 
     .section {
-      padding-top: 48px;
+      padding-top: 50px;
     }
 
     .section-head {
@@ -163,9 +180,9 @@
 
     .section h2 {
       margin: 0;
-      font-family: Georgia, "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
-      font-weight: 500;
-      font-size: clamp(1.45rem, 4vw, 2rem);
+      font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
     .section-note {
@@ -188,26 +205,41 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--card);
-      box-shadow: 0 10px 30px rgba(63, 55, 47, 0.05);
+      box-shadow: 0 12px 28px rgba(164, 118, 140, 0.07);
       text-decoration: none;
       transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30px -45px auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 230, 238, 0.9), rgba(255, 230, 238, 0));
+      pointer-events: none;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 34px rgba(63, 55, 47, 0.09);
-      border-color: rgba(109, 134, 99, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(164, 118, 140, 0.11);
+      border-color: rgba(242, 168, 191, 0.5);
     }
 
     .icon {
       flex: 0 0 auto;
       display: grid;
       place-items: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: var(--accent-soft);
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255, 238, 244, 0.95), rgba(243, 255, 248, 0.95));
+      border: 1px solid rgba(242, 168, 191, 0.16);
       font-size: 1.45rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
     }
 
     .card-body { min-width: 0; }
@@ -231,22 +263,26 @@
     .badge {
       display: inline-block;
       margin-top: 12px;
-      padding: 3px 9px;
-      border: 1px solid var(--line);
+      padding: 4px 10px;
+      border: 1px solid rgba(163, 120, 141, 0.14);
       border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.74rem;
-      background: rgba(255,255,255,0.6);
+      color: #8f7180;
+      font-size: 0.73rem;
+      background: rgba(255,255,255,0.72);
     }
 
     .disabled {
-      opacity: 0.48;
+      opacity: 0.56;
       cursor: default;
       pointer-events: none;
     }
 
     .collection-group {
       margin-top: 30px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.34);
+      border: 1px dashed rgba(163, 120, 141, 0.14);
     }
 
     .collection-group:first-of-type {
@@ -254,45 +290,47 @@
     }
 
     .collection-group-title {
-      margin: 0 0 12px;
-      font-size: 0.86rem;
-      letter-spacing: 0.11em;
+      margin: 0 0 10px;
+      font-size: 0.84rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
       font-weight: 800;
     }
 
     .collection-group-note {
-      margin: -4px 0 14px;
+      margin: -2px 0 14px;
       color: var(--muted);
       font-size: 0.86rem;
     }
 
     .about {
-      padding: 26px;
+      padding: 28px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255,255,255,0.48);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.52));
+      box-shadow: 0 12px 28px rgba(164, 118, 140, 0.07);
     }
 
     .about p { margin: 0; }
     .about p + p { margin-top: 10px; }
 
     footer {
-      padding: 38px 4px 8px;
+      padding: 40px 4px 8px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.79rem;
     }
 
     @media (max-width: 720px) {
       .shell { width: min(100% - 20px, 1080px); padding-top: 16px; }
       .topbar { padding: 5px 3px 14px; }
-      .hero { border-radius: 28px; }
+      .hero { border-radius: 30px; }
       .grid { grid-template-columns: 1fr; }
-      .section { padding-top: 34px; }
+      .section { padding-top: 36px; }
       .section-head { align-items: start; flex-direction: column; gap: 4px; }
       .card { min-height: 0; padding: 19px; }
+      .collection-group { padding: 14px; }
     }
   </style>
 </head>
@@ -304,12 +342,12 @@
     </header>
 
     <section class="hero">
-      <div class="hero-mark">🐱🌿</div>
+      <div class="hero-mark">🐱🌸</div>
       <h1>Nemo collection</h1>
-      <p class="tagline">小さな世界の入口。</p>
+      <p class="tagline">小さくて、かわいい世界の入口。</p>
       <p class="intro">
         NFTから始まって、物語、ゲーム、庭、村へ。<br>
-        ここは、ねもコレで生まれたものを静かにつないでおく場所です。
+        ここは、ねもコレで生まれたものを、ふんわりつないでおく場所です。
       </p>
 
       <!-- ★★★ PC編集ポイント①：Nemo Gardenの公開URLを href="..." に入れる ★★★ -->
@@ -322,7 +360,7 @@
       <div class="section-head">
         <div>
           <h2 id="world-title">World</h2>
-          <p class="section-note">ねもたちが暮らす場所。</p>
+          <p class="section-note">ねもたちが暮らす、やさしい場所。</p>
         </div>
       </div>
 
@@ -352,7 +390,7 @@
       <div class="section-head">
         <div>
           <h2 id="story-title">Stories & Games</h2>
-          <p class="section-note">読む、遊ぶ、推理する。</p>
+          <p class="section-note">読む、遊ぶ、のんびりたどる。</p>
         </div>
       </div>
 
