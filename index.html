@@ -370,6 +370,35 @@
       font-size: 2.4rem;
       backdrop-filter: blur(4px);
       z-index: 1;
+      overflow: hidden;
+    }
+
+    .media-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-sticker {
+      position: absolute;
+      right: clamp(18px, 5vw, 42px);
+      bottom: clamp(18px, 4vw, 34px);
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.56);
+      box-shadow: 0 12px 26px rgba(164, 118, 140, 0.12);
+      opacity: 0.88;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .hero-sticker img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .media-thumb.music {
@@ -422,6 +451,7 @@
       .section-head { align-items: start; flex-direction: column; gap: 4px; }
       .card { min-height: 0; padding: 19px; }
       .collection-group { padding: 14px; }
+      .hero-sticker { width: 58px; height: 58px; border-radius: 18px; right: 14px; bottom: 14px; }
     }
   </style>
 </head>
@@ -440,6 +470,7 @@
         NFTから始まって、物語、ゲーム、庭、村へ。<br>
         ここは、ねもコレで生まれたものを、ふんわりつないでおく場所です。
       </p>
+      <div class="hero-sticker" aria-hidden="true"><img src="assets/video-cover.png" alt=""></div>
 </section>
 
     <section class="section" aria-labelledby="world-title">
@@ -516,14 +547,14 @@
       <div class="section-head">
         <div>
           <h2 id="media-title">Music / Video</h2>
-          <p class="section-note">ねもちゃんの音楽と動画を楽しめるメディア棚。</p>
+          <p class="section-note">ねもちゃんの音楽と動画を、ジャケットと一緒に楽しめるメディア棚。</p>
         </div>
       </div>
 
       <div class="media-grid">
         <a class="media-card" href="https://music.apple.com/jp/artist/nemo-collection/1839452063" target="_blank" rel="noopener">
           <div class="media-thumb music">
-            <div class="media-art">🎧</div>
+            <div class="media-art"><img src="assets/music-cover.png" alt="Apple Music artwork"></div>
           </div>
           <div class="media-body">
             <span class="media-kicker">MUSIC ↗</span>
@@ -534,7 +565,7 @@
 
         <a class="media-card" href="https://www.youtube.com/@tokumori1105" target="_blank" rel="noopener">
           <div class="media-thumb video">
-            <div class="media-art">▶️</div>
+            <div class="media-art"><img src="assets/video-cover.png" alt="YouTube artwork"></div>
           </div>
           <div class="media-body">
             <span class="media-kicker">VIDEO ↗</span>
@@ -545,7 +576,7 @@
 
         <a class="media-card" href="https://www.tiktok.com/@tokumori1105" target="_blank" rel="noopener">
           <div class="media-thumb short">
-            <div class="media-art">🎵</div>
+            <div class="media-art"><img src="assets/short-cover.png" alt="TikTok artwork"></div>
           </div>
           <div class="media-body">
             <span class="media-kicker">SHORT VIDEO ↗</span>
