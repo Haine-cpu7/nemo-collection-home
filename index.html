@@ -165,6 +165,33 @@
       font-size: clamp(1rem, 2.5vw, 1.12rem);
     }
 
+    .hero-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-title-art {
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(163, 120, 141, 0.18);
+      box-shadow: 0 12px 24px rgba(164, 118, 140, 0.10);
+      background: rgba(255,255,255,0.72);
+      flex: 0 0 auto;
+    }
+
+    .hero-title-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .intro {
       max-width: 650px;
       margin: 18px auto 0;
@@ -445,6 +472,8 @@
       .shell { width: min(100% - 20px, 1080px); padding-top: 16px; }
       .topbar { padding: 5px 3px 14px; }
       .hero { border-radius: 30px; }
+      .hero-title-wrap { gap: 12px; }
+      .hero-title-art { width: 68px; height: 68px; border-radius: 18px; }
       .grid { grid-template-columns: 1fr; }
       .media-grid { grid-template-columns: 1fr; }
       .section { padding-top: 36px; }
@@ -582,7 +611,12 @@
 
     <section class="hero">
       <div class="hero-mark">🐱🌸</div>
-      <h1>Nemo collection</h1>
+      <div class="hero-title-wrap">
+        <h1>Nemo collection</h1>
+        <div class="hero-title-art">
+          <img src="assets/hero-nemo.png" alt="Nemo collectionのねもちゃん" width="88" height="88" decoding="async">
+        </div>
+      </div>
       <p class="tagline">小さくて、かわいい世界の入口。</p>
       <p class="intro">
         ねもちゃんを中心に、イラスト、NFT、物語、ゲーム、音楽へ。<br>
