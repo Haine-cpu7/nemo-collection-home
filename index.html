@@ -528,7 +528,23 @@
       .card { min-height: 0; padding: 19px; }
       .collection-group { padding: 14px; }
     }
-  </style>
+  
+    .card.alternative-story {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(247,244,255,0.94), rgba(255,247,250,0.94));
+      border-color: rgba(163, 147, 196, 0.24);
+    }
+
+    .card.alternative-story .icon {
+      background: linear-gradient(135deg, rgba(239,234,255,0.95), rgba(255,239,247,0.95));
+    }
+
+    .card.alternative-story .badge {
+      color: #7f7194;
+      border-color: rgba(127,113,148,0.16);
+      background: rgba(250,248,255,0.78);
+    }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -660,7 +676,14 @@
           "position": 8,
           "name": "Nemo collection on Apple Music",
           "url": "https://music.apple.com/jp/artist/nemo-collection/1839452063"
-        }]
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "NEMO : 17:32",
+          "url": "https://haine-cpu7.github.io/nemo-17-32/"
+        }
+      ]
     }
   ]
 }
@@ -695,7 +718,7 @@
 </div>
 <div class="grid">
 <a class="card" href="https://haine-cpu7.github.io/nemo-village/" rel="noopener" target="_blank">
-<div class="icon"><img alt="ねもの村 favicon" decoding="async" height="26" loading="lazy" src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https://haine-cpu7.github.io/nemo-village/" width="26"/></div>
+<div class="icon"><img alt="ねもの村のねもちゃん" decoding="async" height="26" loading="lazy" src="assets/nemo-village-icon.png" width="26"/></div>
 <div class="card-body">
 <div class="card-title">ねもの村</div>
 <p>179体のねもちゃんが暮らすNFTゲーム。ウォレットを接続して、自分のねもちゃんと村の世界で遊べます。</p>
@@ -721,7 +744,7 @@
 </div>
 <div class="grid">
 <a class="card core-story" href="https://haine-cpu7.github.io/nemo-the-last-record/" rel="noopener" target="_blank">
-<div class="icon"><img alt="NEMO : THE LAST RECORD favicon" decoding="async" height="26" loading="lazy" src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https://haine-cpu7.github.io/nemo-the-last-record/" width="26"/></div>
+<div class="icon"><img alt="NEMO : THE LAST RECORD のねもちゃん" decoding="async" height="26" loading="lazy" src="assets/nemo-last-record-icon.png" width="26"/></div>
 <div class="card-body">
 <div class="card-title">NEMO : THE LAST RECORD</div>
 <p>ねもの出生の秘密と、これまでの物語へつながる記録をたどるストーリーゲーム。</p>
@@ -737,7 +760,7 @@
 </div>
 </a>
 <a class="card" href="https://haine-cpu7.github.io/nemo-detective/" rel="noopener" target="_blank">
-<div class="icon"><img alt="Nemo Mystery favicon" decoding="async" height="26" loading="lazy" src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https://haine-cpu7.github.io/nemo-detective/" width="26"/></div>
+<div class="icon"><img alt="Nemo Mystery のねもちゃん" decoding="async" height="26" loading="lazy" src="assets/nemo-mystery-icon.png" width="26"/></div>
 <div class="card-body">
 <div class="card-title">Nemo Mystery</div>
 <p>ねもちゃんの世界で事件を追う、ミステリー＆推理ゲーム。</p>
@@ -745,7 +768,7 @@
 </div>
 </a>
 <a class="card" href="https://haine-cpu7.github.io/nemo-adventure/" rel="noopener" target="_blank">
-<div class="icon"><img alt="ねも死なないローグライク favicon" decoding="async" height="26" loading="lazy" src="https://www.google.com/s2/favicons?sz=64&amp;domain_url=https://haine-cpu7.github.io/nemo-adventure/" width="26"/></div>
+<div class="icon"><img alt="ねも死なないローグライクのねもちゃん" decoding="async" height="26" loading="lazy" src="assets/roguelike-nemo-icon.png" width="26"/></div>
 <div class="card-body">
 <div class="card-title">ねも死なないローグライク</div>
 <p>ねもちゃんと冒険する、死なないローグライクゲーム。何度でも旅の記録を重ねて遊べます。</p>
@@ -770,7 +793,7 @@
 </div>
 </a>
 </div>
-</section>
+</section><section aria-labelledby="alternative-title" class="section" id="alternative-records"><div class="section-head"><div><h2 id="alternative-title">Alternative Records</h2><p class="section-note">本編とは少し違う角度から描かれる、オルタナティブ作品の棚。</p></div></div><div class="grid"><a class="card alternative-story" href="https://haine-cpu7.github.io/nemo-17-32/" rel="noopener" target="_blank"><div class="icon"><img alt="NEMO : 17:32 のねもちゃん" decoding="async" height="26" loading="lazy" src="assets/nemo-17-32-icon.png" width="26"/></div><div class="card-body"><div class="card-title">NEMO : 17:32</div><p>本編とは異なる角度から、ねもの記録を描くオルタナティブWEBノベル。</p><span class="badge">ALTERNATIVE · WEB NOVEL ↗</span></div></a></div></section>
 <section aria-labelledby="media-title" class="section" id="music-video">
 <div class="section-head">
 <div>
