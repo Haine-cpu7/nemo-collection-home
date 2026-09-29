@@ -1,12 +1,10 @@
 {
   "name": "Nemo collection",
   "short_name": "Nemo collection",
-  "description": "Nemo collection（ねもコレ）の公式ポータル。179体のねもちゃんが暮らすNFTゲーム「ねもの村」、Nemo Mystery、OpenSea NFTコレクション、note、Apple Music、YouTubeなど、ねもちゃんの作品と活動をまとめて紹介します。",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fff3f7",
-  "theme_color": "#fff1f6",
-  "lang": "ja",
+  "background_color": "#f9eff4",
+  "theme_color": "#f4cdd9",
   "icons": [
     {
       "src": "assets/icon-192.png",

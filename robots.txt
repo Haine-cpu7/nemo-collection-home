@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://haine-cpu7.github.io/nemo-collection-home/sitemap.xml
